@@ -4,8 +4,8 @@ const path = require('path');
 const http = require('http');
 const { connectDB, disconnectDB } = require('./db/db');
 
-const documentRoutes = require('./interface/documentController');
-const todoRoutes = require('./interface/todoController'); // 추가
+// const documentRoutes = require('./interface/documentController');
+// const todoRoutes = require('./interface/todoController'); // 추가
 const chatRoutes = require('./interface/chatRoute');
 
 const socket = require('./socket');

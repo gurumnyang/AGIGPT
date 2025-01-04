@@ -15,11 +15,12 @@ async function connectDB() {
     });
   } else {
     // 개발/프로덕션 환경에서는 실제 MongoDB 서버 사용
-    const uri = process.env.MONGO_URI || 'mongodb://localhost:27017/agigpt';
+    const username = process.env.MONGO_USERNAME;
+    const password = process.env.MONGO_PASSWORD;
+    const uri = process.env.MONGO_URI || `mongodb://${username}:${password}@localhost:27017`;
     try {
       await mongoose.connect(uri, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
+        useNewUrlParser: true
       });
       console.log('MongoDB 연결 성공');
     } catch (error) {
